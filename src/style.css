@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+ body {
+  background: #7a3e65;
+}
+  background: -webkit-linear-gradient(
+    to top,
+    #642b73,
+    #c6426e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+
+/* background: linear-gradient(to top, #642b73, #c6426e);
+}  */
+
+body {
+  /* background: #7a3e65; */
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+}
