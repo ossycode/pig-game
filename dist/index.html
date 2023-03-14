@@ -9,29 +9,29 @@
 </head>
 
 <body>
+    <!-- <img src="../dist/images/dice-1.png" alt=""> -->
+    <div id="container" class="flex flex-col items-center justify-center w-[100%] h-screen relative">
 
-    <div id="container" class="flex items-center justify-center w-[100%] h-screen relative">
-
-        <div class=" w-[70%] h-[80%] bg-gameBoardColor2 rounded-lg flex flex-col md:flex-row shadow-inner"
+        <div class=" w-[70%] h-[80%] bg-gameBoardColor2 rounded-lg flex flex-col md:flex-row shadow-inner mt-5"
             id="game-board">
-            <div id="left-side-gameboard" class="md:w-[50%] md:rounded-l-lg flex items-center 
+            <div id="left-side-gameboard" class="player1 md:w-[50%] md:rounded-l-lg flex items-center 
                 justify-evenly flex-col h-2/4 md:h-full transition-all duration-75 bg-activePlayer">
                 <div class="flex items-center justify-center flex-col space-y-3">
                     <h1 class="text-2xl md:text-4xl font-abel text-slate-700 mt-[-18px] md:mt-0">PLAYER 1</h1>
-                    <span class="text-4xl md:text-7xl font-abel text-strongRed ">6</span>
+                    <span class="text-4xl md:text-7xl font-abel text-strongRed ">0</span>
                 </div>
 
                 <div
                     class="flex items-center justify-evenly flex-col w-28 h-16 md:w-[40%] md:h-32 bg-strongRed rounded-lg mt-[-24px] md:mt-0">
                     <p class="font-abel text-zinc-200 text-sm md:text-base">CURRENT</p>
-                    <span class="font-abel text-zinc-200 md:text-3xl ">6</span>
+                    <span class="font-abel text-zinc-200 md:text-3xl ">0</span>
                 </div>
 
             </div>
 
 
             <div id="right-side-gameboard"
-                class="md:w-[50%]  md:rounded-r-lg h-2/4 rounded-b-lg md:h-auto md:rounded-l-none flex items-center justify-evenly flex-col transition-all duration-75">
+                class="player2 md:w-[50%] md:rounded-r-lg h-2/4 rounded-b-lg md:h-auto md:rounded-l-none flex items-center justify-evenly flex-col transition-all duration-75">
 
 
                 <div class="flex items-center justify-center flex-col space-y-3">
@@ -42,42 +42,65 @@
                 <div
                     class="flex items-center justify-evenly flex-col w-28 h-16 md:w-[40%] md:h-32 bg-strongRed rounded-lg mt-[-18px] md:mt-0">
                     <p class="font-abel text-zinc-200 text-sm md:text-base">CURRENT</p>
-                    <span class="font-abel text-zinc-200 md:text-3xl ">6</span>
+                    <span class="font-abel text-zinc-200 md:text-3xl ">0</span>
                 </div>
 
             </div>
 
 
         </div>
-        <div class="absolute top-5 right-3 md:top-10 md:right-10">
+        <div class="absolute top-5 right-3 md:top-10 md:right-10 md:max-lg:top-5 md:max-lg:right-2">
 
-            <button class="bg-white w-28  md:w-32 h-10 rounded-3xl opacity-80 md:font-semibold font-abel">How to
+            <button id="open-modal"
+                class="bg-white w-24 h-10 rounded-3xl opacity-80 md:font-semibold text-sm font-abel hover:opacity-100">How
+                to
                 play</button>
         </div>
 
         <button
-            class="absolute sm:max-md:top-5 sm:max-md:left-5  md:top-28 bg-white w-32 md:w-40 h-10 rounded-3xl opacity-80 md:font-semibold absolute font-nunito text-sm "
-            id="new-game">🔄
+            class="absolute sm:max-md:top-5 sm:max-md:left-5  md:top-28 bg-white w-32 md:w-40 h-10 rounded-3xl opacity-80 hover:opacity-100 md:font-semibold absolute font-nunito text-sm "
+            id="new-game">🔁
             &nbspNEW
             GAME</button>
-        <div class="h-20 w-24 md:h-24 bg-white absolute md:top-52 font-abel rounded-lg ">
-            <div class=" bg-strongRed rounded-full"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div id="dice-ui" class="h-24 w-24 md:h-24  absolute md:top-52 font-abel rounded-lg bg-cover">
         </div>
+        <!-- /Users/ossylab/CompleteJavascriptCourse/pig-game/dist/images/dice-1.png -->
 
-
-        <button
-            class="sm:max-md:bottom-5 sm:max-md:left-5 bg-white w-28 md:w-40 h-10 rounded-3xl opacity-70 md:font-semibold absolute font-nunito text-sm md:top-[60%]">🎲&nbsp
+        <button id="roll-dice"
+            class=" sm:max-md:bottom-3 sm:max-md:left-5 bg-white w-28 md:w-40 h-10 rounded-3xl opacity-70 md:font-semibold absolute font-nunito text-sm md:top-[60%] hover:opacity-100">🎲&nbsp
             ROLL
             DICE</button>
         <button
-            class="sm:max-md:bottom-5 sm:max-md:right-5 bg-white w-24 md:w-32 h-10 rounded-3xl opacity-70 md:font-semibold absolute font-nunito text-sm  md:top-[70%]">📥&nbsp
-            HOLD</button>
+            class="sm:max-md:bottom-4 sm:max-md:right-5 bg-white w-24 md:w-32 h-10 rounded-3xl opacity-70 md:font-semibold absolute font-nunito text-sm  md:top-[70%] hover:opacity-100">🏦&nbsp
+            BANK</button>
 
+        <div id="modal"
+            class="flex fixed z-50 top-0 left-0 w-[100%] h-[100%] bg-modalColor transition-all duration-75 items-center justify-center hidden">
+            <div id="how-to-play" class="bg-gameBoardColor w-[95%] md:w-[60%]  rounded-lg">
+                <div class="flex items-center justify-between bg-strongRed p-5 rounded-t-lg">
+                    <h2 class="text-xl font-semibold hover:opacity-100">How to play?</h2>
+                    <button id="close" class="text-xl">x</button>
+                </div>
+                <ul class="p-6 text-[1.1rem] text-slate-800 leading-6 list-disc list-outside transition-all">
+                    PIG Dice is a game for 2 or more players.
+                    <br>
+                    <br>
+                    <li>Players take turns with a die.</li>
+                    <li>On a player’s turn he/she can roll a die as many times as they like.</li>
+                    <li>If a roll is a 2, 3, 4, 5, or 6, the player adds that many points to their score for the turn.
+                    </li>
+                    <li>A player may choose to end their turn at any time and “bank” their points.</li>
+                    <li>If a player rolls a 1, they lose all their unbank points and their turn is over.</li>
+                    <li>The first player to score 50 or more points wins</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <footer class=" flex items-center md:mt-5
+            leading-7 text-sm font-nunito tracking-wide text-slate-900">Made with 🧡 by&nbsp<span
+                class="text-activePlayer">Ossy</span>
+        </footer>
     </div>
 
     <script src="bundle.js"></script>

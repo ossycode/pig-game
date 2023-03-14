@@ -19,3 +19,29 @@ body {
   /* background: #7a3e65; */
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
 }
+
+@layer components {
+  .dice1 {
+    @apply bg-[url('../dist/images/dice-1.png')];
+  }
+
+  .dice2 {
+    @apply bg-[url('../dist/images/dice-2.png')];
+  }
+
+  .dice3 {
+    @apply bg-[url('../dist/images/dice-3.png')];
+  }
+
+  .dice4 {
+    @apply bg-[url('../dist/images/dice-4.png')];
+  }
+
+  .dice5 {
+    @apply bg-[url('../dist/images/dice-5.png')];
+  }
+
+  .dice6 {
+    @apply bg-[url('../dist/images/dice-6.png')];
+  }
+}

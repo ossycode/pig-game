@@ -3,7 +3,7 @@ module.exports = {
   content: ['./dist/*.{html,js}'],
   theme: {
     screens: {
-      sm: '480px',
+      sm: '300px',
       md: '768px',
       lg: '976px',
       xl: '1440px',
@@ -17,6 +17,7 @@ module.exports = {
         gameBoardColor: '#D989B5',
         gameBoardColor2: 'rgba(255, 255, 255, 0.35)',
         activePlayer: 'rgba(255, 255, 255, 0.4)',
+        modalColor: 'rgba(0, 0, 0, 0.4)',
       },
       fontFamily: {
         abel: ['Abel', 'sans-serif'],
@@ -24,6 +25,9 @@ module.exports = {
       },
       boxShadow: {
         '3xl': '2px 1px rgba(0, 0, 0, 0.25)',
+      },
+      margin: {
+        auto: '50px',
       },
     },
   },
