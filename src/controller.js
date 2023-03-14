@@ -1,6 +1,9 @@
 'use strict';
 
 import * as domElem from './dom-elements';
+import { Player } from './player';
+
+let isStartGame = false;
 
 export const controlModal = function () {
   domElem.modal.classList.contains('hidden')
@@ -14,3 +17,13 @@ export const rollDice = function () {
   //   console.log(dice);
   return dice;
 };
+
+const player1 = Player('Player1');
+const player2 = Player('Player2');
+
+export const initialisedGame = function () {
+  isStartGame = true;
+  console.log(isStartGame);
+};
+
+export const changeActivePlayer = function () {};

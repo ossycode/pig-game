@@ -1,7 +1,7 @@
 'use strict';
 
 import './style.css';
-import { controlModal } from './controller';
+import { controlModal, initialisedGame } from './controller';
 import { displayDiceToUI } from './views';
 import * as domElem from './dom-elements';
 
@@ -19,3 +19,4 @@ document.addEventListener('keydown', function (e) {
 });
 
 domElem.rollDiceBtn.addEventListener('click', displayDiceToUI);
+domElem.startGame.addEventListener('click', initialisedGame);
