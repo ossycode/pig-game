@@ -20,6 +20,25 @@ body {
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
 }
 
+.activePlayer {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 1s ease-in-out;
+}
+
+.animateOut {
+  animation: animateOut 5s forwards;
+  /* animation: animateOut 5s ease-in-out */
+}
+
+@keyframes animateOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @layer components {
   .dice1 {
     @apply bg-[url('../dist/images/dice-1.png')];

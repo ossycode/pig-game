@@ -3,14 +3,9 @@
 export const Player = name => {
   let bankScore = 0;
   let hold = true;
+  let board = {};
+  let roundScore = 0;
   const getName = () => name;
 
-  const checkWin = () => {
-    if (bankScore === 50) {
-      return true;
-    }
-    return false;
-  };
-
-  return { checkWin, getName, hold, bankScore };
+  return { getName, hold, bankScore, board, roundScore };
 };

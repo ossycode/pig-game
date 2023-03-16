@@ -15,16 +15,16 @@
         <div class=" w-[70%] h-[80%] bg-gameBoardColor2 rounded-lg flex flex-col md:flex-row shadow-inner mt-5"
             id="game-board">
             <div id="left-side-gameboard" class="player1 md:w-[50%] md:rounded-l-lg flex items-center 
-                justify-evenly flex-col h-2/4 md:h-full transition-all duration-75 bg-activePlayer">
+                justify-evenly flex-col h-2/4 md:h-full transition-all duration-75 ">
                 <div class="flex items-center justify-center flex-col space-y-3">
                     <h1 class="text-2xl md:text-4xl font-abel text-slate-700 mt-[-18px] md:mt-0">PLAYER 1</h1>
-                    <span class="text-4xl md:text-7xl font-abel text-strongRed ">0</span>
+                    <span id="player1-score" class="text-4xl md:text-7xl font-abel text-strongRed ">0</span>
                 </div>
 
                 <div
                     class="flex items-center justify-evenly flex-col w-28 h-16 md:w-[40%] md:h-32 bg-strongRed rounded-lg mt-[-24px] md:mt-0">
                     <p class="font-abel text-zinc-200 text-sm md:text-base">CURRENT</p>
-                    <span class="font-abel text-zinc-200 md:text-3xl ">0</span>
+                    <span id="player1-current-score" class="font-abel text-zinc-200 md:text-3xl ">0</span>
                 </div>
 
             </div>
@@ -36,13 +36,13 @@
 
                 <div class="flex items-center justify-center flex-col space-y-3">
                     <h1 class="text-2xl md:text-4xl font-abel text-slate-700 mt-[24px] md:mt-0">PLAYER 2</h1>
-                    <span class="text-4xl md:text-7xl font-abel text-strongRed">0</span>
+                    <span id="player2-score" class="text-4xl md:text-7xl font-abel text-strongRed">0</span>
                 </div>
 
                 <div
                     class="flex items-center justify-evenly flex-col w-28 h-16 md:w-[40%] md:h-32 bg-strongRed rounded-lg mt-[-18px] md:mt-0">
                     <p class="font-abel text-zinc-200 text-sm md:text-base">CURRENT</p>
-                    <span class="font-abel text-zinc-200 md:text-3xl ">0</span>
+                    <span id="player2-current-score" class="font-abel text-zinc-200 md:text-3xl ">0</span>
                 </div>
 
             </div>
@@ -70,7 +70,7 @@
             class=" sm:max-md:bottom-3 sm:max-md:left-5 bg-white w-28 md:w-40 h-10 rounded-3xl opacity-70 md:font-semibold absolute font-nunito text-sm md:top-[60%] hover:opacity-100">🎲&nbsp
             ROLL
             DICE</button>
-        <button
+        <button id="bank-btn"
             class="sm:max-md:bottom-4 sm:max-md:right-5 bg-white w-24 md:w-32 h-10 rounded-3xl opacity-70 md:font-semibold absolute font-nunito text-sm  md:top-[70%] hover:opacity-100">🏦&nbsp
             BANK</button>
 
@@ -95,6 +95,9 @@
                 </ul>
 
             </div>
+        </div>
+        <div class="absolute font-semibold text-xl rounded-lg top-[43%] text-center text-red-600 p-2.5 opacity-0"
+            id="notification">
         </div>
 
         <footer class=" flex items-center md:mt-5

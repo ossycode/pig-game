@@ -1,12 +1,21 @@
 'use strict';
 
 import './style.css';
-import { controlModal, initialisedGame } from './controller';
+import {
+  controlModal,
+  initialisedGame,
+  checkIfStartGame,
+  bankPoints,
+} from './controller';
 import { displayDiceToUI } from './views';
 import * as domElem from './dom-elements';
 
-domElem.openModal.addEventListener('click', controlModal);
-domElem.closeModal.addEventListener('click', controlModal);
+globalThis.isStartGame = false;
+
+// export let isStartGame = false;
+
+domElem.openModalBtn.addEventListener('click', controlModal);
+domElem.closeModalBtn.addEventListener('click', controlModal);
 window.addEventListener('click', function (e) {
   if (e.target.id === 'modal') {
     controlModal();
@@ -18,5 +27,13 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-domElem.rollDiceBtn.addEventListener('click', displayDiceToUI);
-domElem.startGame.addEventListener('click', initialisedGame);
+domElem.rollDiceBtn.addEventListener('click', function (e) {
+  displayDiceToUI(e);
+});
+
+domElem.startGameBtn.addEventListener('click', initialisedGame);
+
+domElem.bankPointBtn.addEventListener('click', function (e) {
+  console.log(e.target.id);
+  bankPoints();
+});
